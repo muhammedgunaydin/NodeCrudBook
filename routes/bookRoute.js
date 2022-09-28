@@ -5,5 +5,6 @@ const bookController = require('../controllers/bookController')
 const router = express.Router()
 
 router.route('/create').post(bookController.createBook)
+router.route('/').get(bookController.getAllBooks)
 
 module.exports = router
