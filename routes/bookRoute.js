@@ -6,5 +6,6 @@ const router = express.Router()
 
 router.route('/create').post(bookController.createBook)
 router.route('/').get(bookController.getAllBooks)
+router.route('/:id').get(bookController.getBookbyId)
 
 module.exports = router

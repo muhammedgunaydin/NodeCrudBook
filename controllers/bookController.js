@@ -25,3 +25,16 @@ exports.getAllBooks = async (req, res) => {
     })
   }
 }
+
+exports.getBookbyId = async (req, res) => {
+  try {
+    const book = await Book.findById({_id:req.params.id})
+
+    res.status(200).json({ book })
+  } catch (err) {
+    res.status(400).json({
+      status: 'fail',
+      err,
+    })
+  }
+}
