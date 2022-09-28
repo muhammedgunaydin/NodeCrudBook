@@ -28,7 +28,7 @@ exports.getAllBooks = async (req, res) => {
 
 exports.getBookbyId = async (req, res) => {
   try {
-    const book = await Book.findById({_id:req.params.id})
+    const book = await Book.findById({ _id: req.params.id })
 
     res.status(200).json({ book })
   } catch (err) {
@@ -37,4 +37,45 @@ exports.getBookbyId = async (req, res) => {
       err,
     })
   }
+}
+
+// exports.updateBook = async (req, res) => {
+//   try {
+//     const book = await Book.findById({_id: req.params.id })
+//     book.book_author = req.body.book_author
+//     book.save()
+//     res.status(200).json({ book })
+//   } catch (err) {
+//     res.status(400).json({
+//       status: 'fail',
+//       err,
+//     })
+//   }
+// }
+
+exports.updateBook = async (req, res) => {
+  try {
+    const book = await Book.findOneAndUpdate(
+      { _id: req.params.id },
+      { $set: req.body }
+    )
+    res.status(200).send('Book updated successfully')
+  } catch (err) {
+    res.status(400).json({
+      status: 'fail',
+      err,
+    })
+  }
+}
+
+exports.deleteBook = async (req, res) => {
+    try{
+        const book = await Book.findByIdAndDelete({ _id: req.params.id})
+        res.status(200).send('Book deleted successfully')
+    }catch(err) {
+        res.status(400).json({
+            status:'fail',
+            err,
+        })
+    }
 }
