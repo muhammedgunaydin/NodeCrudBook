@@ -17,18 +17,27 @@ package and [MongoDB](https://www.mongodb.com) database.
     npm init
     npm start
   ```
+  ```bash
+    cd NodeCrudBook
+  ```
+  ```bash
+    npm init
+  ```
+  ```bash
+    npm start
+  ```
   
-  ## Usage Examples
+## Usage Examples
 -  Get All Book
-  ```bash
+```bash
     curl -X GET localhost:3000/books
-  ```
+```
 -  Get Book (by id)
-  ```bash
+```bash
     curl -X GET localhost:3000/books/:id
-  ```
+```
 -  Add Book
-  ```bash
+```bash
     curl -X POST localhost:3000/books/create
       '{ "isbn" : 2434724161,
           "book_name" : "NodeJS For Beginners",
@@ -36,18 +45,18 @@ package and [MongoDB](https://www.mongodb.com) database.
           "page_count" : 174,
           "book_count": 2,
          }'
-  ```
+```
 -  Delete Book (by id)
-  ```bash
+```bash
     curl -X DELETE localhost:3000/books/:id
-  ```
+```
 -  Update Book (by id)
-  ```bash
-    curl -X PUT localhost:3000/books/:id
+```bash
+    curl -X PATCH localhost:3000/books/:id
        '{ "isbn" : 4587326545,
           "book_name" : "NodeJS For Beginners",
           "author": "Muhammed Günaydın",
         	"page_count" : 174,
           "book_count": 2,
          }'
-  ```
+```
