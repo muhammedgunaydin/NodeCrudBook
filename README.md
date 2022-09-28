@@ -13,13 +13,13 @@ package and [MongoDB](https://www.mongodb.com) database.
 - Clone the repository and move to the project directory:
   ```bash
     git clone https://github.com/muhammedgunaydin/NodeCrudBook.git
-  ```
-  ```bash
     cd NodeCrudBook
   ```
+  To load the package:
   ```bash
     npm init
   ```
+  Start:
   ```bash
     npm start
   ```
