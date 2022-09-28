@@ -21,7 +21,7 @@ const BookSchema = new Schema({
     },
     book_count:{
         type:Number,
-        required:true
+        required:true 
     }
 }) 
 

@@ -1,6 +1,5 @@
 const express = require('express')
 const bookController = require('../controllers/bookController')
-// const Book = require('../models/Book')
 
 const router = express.Router()
 

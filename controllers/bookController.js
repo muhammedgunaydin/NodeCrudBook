@@ -39,20 +39,6 @@ exports.getBookbyId = async (req, res) => {
   }
 }
 
-// exports.updateBook = async (req, res) => {
-//   try {
-//     const book = await Book.findById({_id: req.params.id })
-//     book.book_author = req.body.book_author
-//     book.save()
-//     res.status(200).json({ book })
-//   } catch (err) {
-//     res.status(400).json({
-//       status: 'fail',
-//       err,
-//     })
-//   }
-// }
-
 exports.updateBook = async (req, res) => {
   try {
     const book = await Book.findOneAndUpdate(
@@ -69,13 +55,13 @@ exports.updateBook = async (req, res) => {
 }
 
 exports.deleteBook = async (req, res) => {
-    try{
-        const book = await Book.findByIdAndDelete({ _id: req.params.id})
-        res.status(200).send('Book deleted successfully')
-    }catch(err) {
-        res.status(400).json({
-            status:'fail',
-            err,
-        })
-    }
+  try {
+    const book = await Book.findByIdAndDelete({ _id: req.params.id })
+    res.status(200).send('Book deleted successfully')
+  } catch (err) {
+    res.status(400).json({
+      status: 'fail',
+      err,
+    })
+  }
 }
