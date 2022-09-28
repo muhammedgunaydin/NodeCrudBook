@@ -10,4 +10,4 @@ router.route('/:id').get(bookController.getBookbyId)
 router.route('/:id').patch(bookController.updateBook)
 router.route('/:id').delete(bookController.deleteBook)
 
-module.exports = router
+module.exports = router 
