@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const volleyball = require('volleyball')
+const bookRoute = require('./routes/bookRoute')
 
 const app = express()
 
@@ -20,7 +21,7 @@ app.get('/', (req, res) => {
   res.json('welcome home page')
 })
 
-
+app.use('/books', bookRoute)
 
 const port = 3000
 app.listen(port, () => {
